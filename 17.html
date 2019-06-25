@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+
+</body>
+<script>
+    function getSum(n) {
+        var sum = 0 ; 
+        for (var i = 1; i <= n; i++) {
+            sum += i;
+        }
+        return sum;
+    }
+
+    console.log(getSum(10));
+
+    function getSum2(n,m) {
+        var sum = 0 ; 
+        for (var i = n; i <= m; i++) {
+            sum += i;
+        }
+        return sum;
+    }
+
+    console.log(getSum2(10,11));    
+
+    function getArea(r) {
+        var area = 0;
+        area = Math.PI * Math.pow(r,2) ;
+        return area; 
+    }
+
+    console.log(getArea(2));
+
+    function getSum3(a,b,c) {
+        var sum = 0 ;
+        sum = a + b + c ;
+        return sum;
+    }
+
+    console.log(getSum3(10,15,20)); 
+
+</script>
+
+</html>

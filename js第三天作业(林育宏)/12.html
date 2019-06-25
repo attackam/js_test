@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+<script>
+    var arr1 = [];
+    arr1[0] = '刘备';
+    arr1[1] = '关羽';
+    arr1[2] = '张飞';
+
+    var arr2 = [];
+    arr2[0] = '黄忠';
+    arr2[1] = '马超';
+    arr2[2] = '狗蛋';
+
+    var arr3 = [];
+    arr3[0] = '你';
+    arr3[1] = '我';
+    arr3[2] = '他';
+
+    var arr4 = [];
+    arr4 = arr1.concat(arr2,arr3);
+    // arr1.reverse();
+    // document.write(arr1);
+    document.write((arr1.concat(arr2,arr3)).reverse().join('-'));
+    document.write('<br>');
+    document.write(arr4.reverse().join('-'));
+    document.write('<br>');
+    arr4.pop();
+    document.write(arr4);
+
+</script>
+</html>

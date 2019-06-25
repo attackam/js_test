@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+<script>
+    
+    while(true){
+        var msg = prompt('请输入数字或者编号，进行下一步聊天\n'+
+        '输入数字<1>或者<总和>我们帮您计算数组和\n'+
+        '输入数字<2>或者<时间>我们帮您查询当前时间\n'+
+        '输入数字<3>或者<笑话>我给你讲个笑话\n'+
+        '输入q退出聊天\n');
+        if(msg === 'q'){
+            alert('我要退出程序了');
+            break;
+        }
+        switch(msg){
+            case '1':
+            case '总和':
+            var numbers = prompt('请输入一串数字，中间用,号隔开，如：1-2-3-4');
+            var arr  =  numbers.split('-');
+            var sum = 0 ;
+            for(var i = 0 ; i < arr.length ; i++){
+                sum = sum + parseFloat(arr[i]);
+            }
+            alert('您所计算的数组和为：'+sum);
+            break;
+            case '2':
+            case '时间':
+            var time ='';
+            var date = new Date();
+            var year = date.getFullYear();   
+            var month = date.getMonth()+1;
+            var day = date.getDate();
+            var hour = date.getHours();
+            var minute = date.getMinutes();
+            var second = date.getSeconds();
+            month = month < 10  ? '0' + month : month;
+            day = day < 10  ? '0' + day : day;
+            hour = hour < 10  ? '0' + hour : hour;
+            minute = minute < 10  ? '0' + minute : minute;
+            second = second < 10  ? '0' + second : second;
+            time = year + '-' + month + '-' + day + ' ' + hour + ':' + minute + ":" + second;
+            alert('当前的时间是：'+time);
+            break;
+            case '3':
+            case '笑话':
+            var arr2 = ['笑话1','笑话2','笑话3','笑话4','笑话5','笑话6'];
+            var r = Math.random() * arr2.length;
+            r = Math.floor(r);
+            alert(arr2[r]);
+            break;
+            default:
+            alert('我听不懂你在说什么');
+            
+        }
+
+    }
+
+</script>
+</html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+<script>
+    var sum = 0;
+    var ave = 0;
+    var arr = [1,8,58,69,48,25,37];
+    arr[6] = 77;
+    arr[7] = 88;
+    arr[8] = 100;
+    document.write(arr);
+    for(var i = 0 ; i < arr.length ; i++){
+        sum += arr[i];  
+    }
+    ave = sum / arr.length;
+    document.write('<br>');
+    document.write(sum);
+    document.write('<br>');
+    document.write(ave);
+</script>
+</html>
