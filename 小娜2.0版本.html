@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+
+</body>
+<script>
+    //定义一个数组，求得数组内部的和
+    function getSumFromArray(arr) {
+        var sum = 0;
+        for (var i = 0; i < arr.length; i++) {
+            sum += parseFloat(arr[i]);
+        }
+        return sum;
+    }
+    //定义当用户输入数字1的时候执行的操作
+    function caseOne() {
+        var numbers = prompt('请输入您所需要求和的数组，并用,隔开');
+        var arr = numbers.split(',');
+        var sum = getSumFromArray(arr);
+        return sum;
+    }
+    //定义一个函数，去补全当时间的数值小于10时自动在前面加上0
+    function patchZero(number) {
+        if (number < 10) {
+            number = '0' + number;
+        }
+        return number;
+    }
+    //定义一个函数，可以获取当前时间，并转换为yyyy-mm-dd hh:mm:ss
+    function getTime() {
+        var date = new Date();
+        var y = date.getFullYear();
+        var M = date.getMonth() + 1;
+        var d = date.getDate();
+        var h = date.getHours();
+        var m = date.getMinutes();
+        var s = date.getSeconds();
+        M = patchZero(M);
+        d = patchZero(d);
+        h = patchZero(h);
+        m = patchZero(m);
+        s = patchZero(s);
+        var time = y + '-' + M + '-' + d + ' ' + h + ':' + m + ':' + s;
+        return time;
+    }
+    //定义一个函数，随机讲个笑话
+    function tellJokes() {
+        // 创建一个包含多个笑话的数组
+        var jokes = [
+            '笑话1',
+            '笑话2',
+            '笑话3',
+            '笑话4',
+            '笑话5',
+            '笑话6'
+        ]
+        //获取随机索引
+        var index = Math.floor(Math.random() * jokes.length);
+        return jokes[index];
+    }
+
+    //1.让程序一直运行，直到客户选择退出
+    while (true) {
+        //2.让用户输入命令，执行相应的操作
+        var msg = prompt('欢迎来到小娜聊天室\n输入数字1求总和\n输入数字2获取时间\n输入数字3给你讲笑话\n输入字母q退出聊天室');
+        //2.1当用户输入q时退出当前聊天室
+        if (msg === 'q') {
+            alert('您已退出聊天室');
+            break;
+        }
+        //2.2检测用户输入的命令，并且跳转到对应的功能
+        switch (msg) {
+            //2.2.1当用户输入的是1或者总和的时候，帮用户求得输入数组的和
+            case '1':
+            case '总和':
+                var sum = caseOne();
+                alert('您所求的总和是：' + sum);
+                break;
+                //2.2.2当用户输入的是2或者时间的时候，帮用户获取当前的时间
+            case '2':
+            case '时间':
+                var time = getTime();
+                alert('当前的时间是：' + time);
+                break;
+                //2.2.3当用户输入的是3或者笑话的时候，给用户讲一个笑话
+            case '3':
+            case '笑话':
+                alert(tellJokes());
+                break;
+                //2.2.4当用户输入的指令不是我们提供的要求的时候，弹出提示输入有误
+            default:
+                alert('您的输入有误，无法识别');
+                break;
+
+
+        }
+
+
+    }
+</script>
+
+</html>
