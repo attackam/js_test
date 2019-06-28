@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+
+</body>
+<script>
+    //1.新建一个小娜构造函数
+    function XiaoNa() {
+        //2.让用户输入命令，执行相应的操作
+        this.shuru = function () {
+            var msg = prompt('欢迎来到小娜聊天室\n输入数字1求总和\n输入数字2获取时间\n输入数字3给你讲笑话\n输入字母q退出聊天室');
+            return msg;
+        }
+        //3.小娜的计算功能
+        this.calculator = function () {
+            var numbers = prompt('请输入您所需要求和的数组，并用,隔开');
+            var arr = numbers.split(',');
+            var sum = 0;
+            for (var i = 0; i < arr.length; i++) {
+                sum += parseFloat(arr[i]);
+            }
+            alert('您所求的总和是：' + sum);
+        }
+        //4.小娜获取时间功能
+        this.getDate = function () {
+            var date = new Date();
+            var y = date.getFullYear();
+            var M = date.getMonth() + 1;
+            var d = date.getDate();
+            var h = date.getHours();
+            var m = date.getMinutes();
+            var s = date.getSeconds();
+            M = M < 10 ? '0' + M : M;
+            d = d < 10 ? '0' + d : d;
+            h = h < 10 ? '0' + h : h;
+            m = m < 10 ? '0' + m : m;
+            s = s < 10 ? '0' + s : s;
+            var time = y + '-' + M + '-' + d + ' ' + h + ':' + m + ':' + s;
+            alert('当前的时间是：' + time);
+        }
+        //5.小娜讲笑话功能
+        this.sayJokes = function () {
+            // 创建一个包含多个笑话的数组
+            var jokes = [
+                '笑话1',
+                '笑话2',
+                '笑话3',
+                '笑话4',
+                '笑话5',
+                '笑话6'
+            ]
+            //获取随机索引
+            var index = Math.floor(Math.random() * jokes.length);
+            alert(jokes[index]);
+        }
+        //6.小娜懵逼
+        this.mengbi = function () {
+            alert('我听不懂');
+        }
+        }
+
+    while (true) {
+        //新建一个小娜对象
+        var xiaoNa = new XiaoNa();
+        //获取用户输入的信息
+        var msg = xiaoNa.shuru();
+        //判断退出的情况
+        if (msg === 'q') {
+            break;
+        }
+        //判断用户需要执行的操作
+        switch (msg) {
+            //定义当用户输入数字1的时候执行的操作
+            case '1':
+            case '总和':
+                xiaoNa.calculator();
+                break;
+            //定义当用户输入数字2的时候执行的操作
+            case '2':
+            case '时间':
+                xiaoNa.getDate();
+                break;
+            //定义当用户输入数字3的时候执行的操作
+            case '3':
+            case '笑话':
+                xiaoNa.sayJokes();
+                break;
+            //其他情况
+            default:
+                xiaoNa.mengbi();
+                break;
+
+        }
+
+
+    }
+</script>
+
+</html>

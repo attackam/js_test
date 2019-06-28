@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+<script>
+    var obj = {
+        name: '二狗',
+        like: '狗粮'
+    }
+    var obj2 = new Object();
+    obj2.name = '二哈';
+    obj2.food = '狗粮';
+    for(var key in obj) {
+        console.log(key);
+        console.log(obj[key]);
+    }
+    for(var key002 in obj2){
+        console.log(key002);
+        console.log(obj2[key002]);
+    }
+
+
+    //自定义构造函数练习
+    function Dog(name,age,color) {
+        this.name = name;
+        this.age = age;
+        this.color = color;
+        this.eat = function () {
+            console.log('我喜欢吃肉肉。。。');
+        }
+        this.bark = function () {
+            console.log('汪汪汪。。。');
+        }
+    }
+    var d1 = new Dog('旺财',2,'黑色');
+    console.log('狗狗的名字叫做'+d1.name+',它今年'+d1.age+'岁了,它是'+d1.color+'的。')
+    d1.eat();
+    d1.bark();
+
+    for(var key in d1) {
+        console.log(key+':'+d1[key]);
+    }
+</script>
+</html>
